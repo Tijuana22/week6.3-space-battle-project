@@ -9,12 +9,6 @@ class USS_Hunt {
         this.accuracy = accuracy
     }
     attack() {
-        // if (Math.random() < USS_Hunt.accuracy) {
-        //     inv.hull <= this.firepower;
-        //     alert("ATTACK SUCCESSFULL!");
-        // } else {
-        //     alert("ATTACK FAILED!");
-
         let r = Math.random()
         if(r < this.accuracy){
             invCount[0].hull -= this.firepower;
@@ -61,7 +55,7 @@ for(let i=0;i<6; i++){
 };
 console.log(fighter, invCount[0]);
 
-// initialize functions before game starts
+
 // BATTLE
 const engage =()=> {
     fighter.attack();
@@ -75,8 +69,7 @@ const engage =()=> {
 
     // CHECK STATUS
 let stat =()=>{
-    if(invCount.length > 0){
-    // change quotes to backtick     add .hull to fighter                                             fixed spelling of accuracy    //length of array                                                                         // checks accuracy instead of puttin a random one in
+    if(invCount.length > 0){                                                                                        
     alert(`Your status >>> HULL: ${fighter.hull} |FIREPOWER; ${fighter.firepower} | ACCURACY: ${fighter.accuracy}%\nAlien#${invCount.length} Status >>> HULL: ${invCount[0].hull} | FIREPOWER: ${invCount[0].firepower} | ACCURACY: ${invCount[0].accuracy}%`)
     }
 }
@@ -103,10 +96,7 @@ const startGame = () => {
         let response = prompt(`Enter 'a' to play or 'r' to retreat`);
         if (response.toLowerCase()=== 'r'){
             alert("YOU LOSE!")
-            // fighter.hull =0;
-            // fighter.firepower =0;
-            // fighter.accuracy =0;
-            // stat();
+            
             return
         }else if(response.toLowerCase()=== 'a'){
             stat();
